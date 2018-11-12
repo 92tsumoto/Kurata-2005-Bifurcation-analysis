@@ -1,0 +1,193 @@
+\documentclass{article}
+\pagestyle{empty}
+\begin{document}
+\title{\bf System name ``KRT''}
+\author{``Autonomous system''}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+\section{System Equations}
+\begin{eqnarray*}
+\frac{dx_{1}}{dt}  \!\!\!\!&=&\!\!\!\!  -({\mbox{\tt Gna}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt inau1}}/(x_{16}+{\mbox{\tt inau2}})))x_{2}x_{2}x_{2}x_{3}x_{3} + {\mbox{\tt rate4}}{\mbox{\tt Gca}}(x_{1}-{\mbox{\tt Eca}})x_{4}x_{5}{\mbox{\tt kmmca}}/({\mbox{\tt kmmca}}+x_{13}) +{\mbox{\tt Gto}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt itok1}}/({\mbox{\tt pnato}}x_{16}+{\mbox{\tt ki}})))x_{6}x_{7} +{\mbox{\tt Gkr}}{\mbox{\tt rate1}}x_{8}(x_{1}-{\mbox{\tt Ek}})/({\mbox{\tt uni}}+\exp((x_{1}+{\mbox{\tt ikrk1}})/{\mbox{\tt ikrk2}})) +{\mbox{\tt rate2}}{\mbox{\tt Gks}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt iksk1}}/({\mbox{\tt prnak}}x_{16}+{\mbox{\tt ki}})))x_{9}x_{9} +{\mbox{\tt rate3}}{\mbox{\tt Gk1}}(x_{1}-{\mbox{\tt Ek}}){\mbox{\tt ik1c5}}({\mbox{\tt uni}}+\exp(-{\mbox{\tt ik1c6}}(x_{1}-{\mbox{\tt Ek}})))/(({\mbox{\tt uni}}+\exp({\mbox{\tt ik1c1}}(x_{1}-{\mbox{\tt ik1c2}}-{\mbox{\tt Ek}})))({\mbox{\tt ik1c8}}\exp({\mbox{\tt ik1c3}}(x_{1}+{\mbox{\tt ik1c4}}-{\mbox{\tt Ek}}))+\exp({\mbox{\tt ik1c5}}(x_{1}-{\mbox{\tt ik1c7}}-{\mbox{\tt Ek}})))+{\mbox{\tt ik1c5}}({\mbox{\tt uni}}+\exp(-{\mbox{\tt ik1c6}}(x_{1}-{\mbox{\tt Ek}})))) +{\mbox{\tt rate6}}{\mbox{\tt ncxc1}}({\mbox{\tt cao}}x_{16}x_{16}x_{16}\exp({\mbox{\tt ncxrncx}}{\mbox{\tt FRT}}x_{1})-{\mbox{\tt ncxc2}}x_{13}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))/({\mbox{\tt uni}}+{\mbox{\tt ncxksat}}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1})) + {\mbox{\tt rate5}}{\mbox{\tt Gnak}}({\mbox{\tt inakc1}})/({\mbox{\tt uni}}+({\mbox{\tt inakc4}}/x_{16})sqrt({\mbox{\tt inakc4}}/x_{16}))/({\mbox{\tt uni}}+{\mbox{\tt inakc2}}\exp(-{\mbox{\tt inakc5}}{\mbox{\tt FRT}}x_{1})+{\mbox{\tt inakc3}}\exp(-{\mbox{\tt FRT}}x_{1})) +{\mbox{\tt Gpca}}x_{13}/({\mbox{\tt pcakm}}+x_{13}) +{\mbox{\tt Gcab}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt cao}}/x_{13})/{\mbox{\tt zca}}) +{\mbox{\tt Gnab}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt nao}}/x_{16})))\\
+\frac{dx_{2}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}-x_{2})({\mbox{\tt inamc1}}(x_{1}+{\mbox{\tt inamc2}})/({\mbox{\tt uni}}-\exp(-(x_{1}+{\mbox{\tt inamc2}})/{\mbox{\tt inamc5}})))-x_{2}{\mbox{\tt inamc3}}\exp(-x_{1}/{\mbox{\tt inamc4}})\\
+\frac{dx_{3}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt inahc7}}({\mbox{\tt uni}}-\tanh({\mbox{\tt inahc1}}+{\mbox{\tt inahc2}}x_{1})) - x_{3})/({\mbox{\tt inahc3}}+{\mbox{\tt inahc4}}({\mbox{\tt uni}}-\tanh({\mbox{\tt inahc1}}+{\mbox{\tt inahc2}}x_{1}))/({\mbox{\tt uni}}-\tanh({\mbox{\tt inahc5}}(x_{1}+{\mbox{\tt inahc6}}))))\\
+\frac{dx_{4}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}/({\mbox{\tt uni}}+\exp(-(x_{1}+{\mbox{\tt icaldc1}})/{\mbox{\tt icaldc2}})) - x_{4})/(({\mbox{\tt icaldc8}}/({\mbox{\tt uni}}+\exp(-(x_{1}+{\mbox{\tt icaldc4}})/{\mbox{\tt icaldc5}}))+{\mbox{\tt icaldc3}}){\mbox{\tt icaldc8}}/({\mbox{\tt uni}}+\exp((x_{1}+{\mbox{\tt icaldc9}})/{\mbox{\tt icaldc9}}))+{\mbox{\tt uni}}/({\mbox{\tt uni}}+\exp(-(x_{1}-{\mbox{\tt icaldc6}})/{\mbox{\tt icaldc7}})))\\
+\frac{dx_{5}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}/({\mbox{\tt uni}}+\exp((x_{1}+{\mbox{\tt icalkc1}})/{\mbox{\tt icalkc2}})) - x_{5})/({\mbox{\tt icalkc5}}/({\mbox{\tt icalkc3}}\exp(-({\mbox{\tt icalkc4}}(x_{1}-{\mbox{\tt icalkc7}}))({\mbox{\tt icalkc4}}(x_{1}-{\mbox{\tt icalkc7}})))+{\mbox{\tt icalkc6}}))\\
+\frac{dx_{6}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}-x_{6})({\mbox{\tt itoc1}}\exp(-{\mbox{\tt itoc2}}(x_{1}-{\mbox{\tt itoc3}}))/({\mbox{\tt uni}}+\exp(-{\mbox{\tt itoc4}}(x_{1}-{\mbox{\tt itoc3}}))))-x_{6}({\mbox{\tt itoc5}}\exp(-{\mbox{\tt itoc6}}(x_{1}-{\mbox{\tt itoc7}}))+{\mbox{\tt itoc8}}x_{1})/({\mbox{\tt uni}}+\exp(-{\mbox{\tt itoc9}}(x_{1}-{\mbox{\tt itoc8}})))\\
+\frac{dx_{7}}{dt}  \!\!\!\!&=&\!\!\!\!  (({\mbox{\tt itoq1}}\exp(-{\mbox{\tt itoq2}}(x_{1}+{\mbox{\tt itoq3}}-{\mbox{\tt dVgq}}))+{\mbox{\tt itoq4}}(x_{1}-{\mbox{\tt dVgq}}))/({\mbox{\tt uni}}+\exp(-{\mbox{\tt itoq5}}(x_{1}+{\mbox{\tt itoq3}}-{\mbox{\tt dVgq}})))/(({\mbox{\tt itoq1}}\exp(-{\mbox{\tt itoq2}}(x_{1}+{\mbox{\tt itoq3}}-{\mbox{\tt dVgq}}))+{\mbox{\tt itoq4}}(x_{1}-{\mbox{\tt dVgq}}))/({\mbox{\tt uni}}+\exp(-{\mbox{\tt itoq5}}(x_{1}+{\mbox{\tt itoq3}}-{\mbox{\tt dVgq}})))+({\mbox{\tt itoq6}}\exp(-{\mbox{\tt itoq7}}(x_{1}+{\mbox{\tt itoq8}}-{\mbox{\tt dVgq}}))+{\mbox{\tt itoq9}}(x_{1}-{\mbox{\tt dVgq}}))/({\mbox{\tt uni}}+\exp(-{\mbox{\tt itoq10}}(x_{1}+{\mbox{\tt itoq8}}-{\mbox{\tt dVgq}})))) - x_{7})(({\mbox{\tt itoq1}}\exp(-{\mbox{\tt itoq2}}(x_{1}+{\mbox{\tt itoq3}}))+{\mbox{\tt itoq4}}x_{1})/({\mbox{\tt uni}}+\exp(-{\mbox{\tt itoq5}}(x_{1}+{\mbox{\tt itoq3}})))+({\mbox{\tt itoq6}}\exp(-{\mbox{\tt itoq7}}(x_{1}+{\mbox{\tt itoq8}}))+{\mbox{\tt itoq9}}x_{1})/({\mbox{\tt uni}}+\exp(-{\mbox{\tt itoq10}}(x_{1}+{\mbox{\tt itoq8}}))))\\
+\frac{dx_{8}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}/({\mbox{\tt uni}}+\exp(-(x_{1}+{\mbox{\tt ikrc5}})/{\mbox{\tt ikrc6}})) - x_{8})({\mbox{\tt ikrc1}}(x_{1}+{\mbox{\tt ikrc5}})/({\mbox{\tt uni}}-\exp(-(x_{1}+{\mbox{\tt ikrc5}})/{\mbox{\tt ikrc7}}))+{\mbox{\tt ikrc2}}(x_{1}-{\mbox{\tt ikrc3}})/(\exp((x_{1}-{\mbox{\tt ikrc3}})/{\mbox{\tt ikrc4}})-{\mbox{\tt uni}}))\\
+\frac{dx_{9}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}/sqrt({\mbox{\tt uni}}+\exp(-(x_{1}-{\mbox{\tt iksc3}})/{\mbox{\tt iksc4}})) - x_{9})/({\mbox{\tt iksc2}}/({\mbox{\tt uni}}+\exp(-(x_{1}+{\mbox{\tt iksc5}})/{\mbox{\tt iksc6}}))+{\mbox{\tt iksc1}})\\
+\frac{dx_{10}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}/({\mbox{\tt uni}}+\exp(-(x_{1}+{\mbox{\tt icaldc1}})/{\mbox{\tt icaldc2}})) - x_{10})/{\mbox{\tt taudr}}\\
+\frac{dx_{11}}{dt}  \!\!\!\!&=&\!\!\!\!  ({\mbox{\tt uni}}/({\mbox{\tt uni}}+\exp((x_{1}+{\mbox{\tt icalkc1}})/{\mbox{\tt icalkc2}})) - x_{11})/{\mbox{\tt taudf}}\\
+\frac{dx_{12}}{dt}  \!\!\!\!&=&\!\!\!\!  {\mbox{\tt kktc}}x_{13}({\mbox{\tt uni}}-x_{12})-{\mbox{\tt kbtc}}x_{12}\\
+\frac{dx_{13}}{dt}  \!\!\!\!&=&\!\!\!\!  (({\mbox{\tt kdcm}}+x_{13})({\mbox{\tt kdcm}}+x_{13})/(({\mbox{\tt kdcm}}+x_{13})({\mbox{\tt kdcm}}+x_{13})+{\mbox{\tt conccm}}{\mbox{\tt kdcm}}))((-({\mbox{\tt rate4}}{\mbox{\tt Gca}}(x_{1}-{\mbox{\tt Eca}})x_{4}x_{5}{\mbox{\tt kmmca}}/({\mbox{\tt kmmca}}+x_{13})+{\mbox{\tt Gpca}}x_{13}/({\mbox{\tt pcakm}}+x_{13}) +{\mbox{\tt Gcab}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt cao}}/x_{13})/{\mbox{\tt zca}})-{\mbox{\tt caic1}}{\mbox{\tt rate6}}{\mbox{\tt ncxc1}}({\mbox{\tt cao}}x_{16}x_{16}x_{16}\exp({\mbox{\tt ncxrncx}}{\mbox{\tt FRT}}x_{1})-{\mbox{\tt ncxc2}}x_{13}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))/({\mbox{\tt uni}}+{\mbox{\tt ncxksat}}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))){\mbox{\tt Cm}}/({\mbox{\tt zca}}{\mbox{\tt F}}) + {\mbox{\tt vrel}}{\mbox{\tt Grel}}/({\mbox{\tt uni}}+\exp(({\mbox{\tt rate4}}{\mbox{\tt Gca}}(x_{1}-{\mbox{\tt Eca}})x_{4}x_{5}{\mbox{\tt kmmca}}/({\mbox{\tt kmmca}}+x_{13})+{\mbox{\tt Gcab}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt cao}}/x_{13})/{\mbox{\tt zca}})+{\mbox{\tt Gpca}}x_{13}/({\mbox{\tt pcakm}}+x_{13})-{\mbox{\tt caic1}}{\mbox{\tt rate6}}{\mbox{\tt ncxc1}}({\mbox{\tt cao}}x_{16}x_{16}x_{16}\exp({\mbox{\tt ncxrncx}}{\mbox{\tt FRT}}x_{1})-{\mbox{\tt ncxc2}}x_{13}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))/({\mbox{\tt uni}}+{\mbox{\tt ncxksat}}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))+{\mbox{\tt caic2}})/{\mbox{\tt caic3}}))x_{10}x_{10}x_{10}x_{11}x_{11}x_{11}(x_{14}-x_{13}) - {\mbox{\tt vup}}{\mbox{\tt Gup}}x_{13}x_{13}/(x_{13}x_{13} + {\mbox{\tt kup}}{\mbox{\tt kup}}) + {\mbox{\tt vup}}{\mbox{\tt Gleak}}(x_{15}-x_{13}))/{\mbox{\tt vi}}-{\mbox{\tt concTc}}({\mbox{\tt kktc}}x_{13}({\mbox{\tt uni}}-x_{12})-{\mbox{\tt kbtc}}x_{12}))\\
+\frac{dx_{14}}{dt}  \!\!\!\!&=&\!\!\!\!  (({\mbox{\tt kdcq}}+x_{14})({\mbox{\tt kdcq}}+x_{14})/(({\mbox{\tt kdcq}}+x_{14})({\mbox{\tt kdcq}}+x_{14})+{\mbox{\tt conccq}}{\mbox{\tt kdcq}}))((x_{15}-x_{14})/{\mbox{\tt tau}} - {\mbox{\tt Grel}}/({\mbox{\tt uni}}+\exp(({\mbox{\tt rate4}}{\mbox{\tt Gca}}(x_{1}-{\mbox{\tt Eca}})x_{4}x_{5}{\mbox{\tt kmmca}}/({\mbox{\tt kmmca}}+x_{13})+{\mbox{\tt Gcab}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt cao}}/x_{13})/{\mbox{\tt zca}})+{\mbox{\tt Gpca}}x_{13}/({\mbox{\tt pcakm}}+x_{13})-{\mbox{\tt caic1}}{\mbox{\tt rate6}}{\mbox{\tt ncxc1}}({\mbox{\tt cao}}x_{16}x_{16}x_{16}\exp({\mbox{\tt ncxrncx}}{\mbox{\tt FRT}}x_{1})-{\mbox{\tt ncxc2}}x_{13}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))/({\mbox{\tt uni}}+{\mbox{\tt ncxksat}}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))+{\mbox{\tt caic2}})/{\mbox{\tt caic3}}))x_{10}x_{10}x_{10}x_{11}x_{11}x_{11}(x_{14}-x_{13}))\\
+\frac{dx_{15}}{dt}  \!\!\!\!&=&\!\!\!\!  {\mbox{\tt Gup}}x_{13}x_{13}/(x_{13}x_{13} + {\mbox{\tt kup}}{\mbox{\tt kup}}) - {\mbox{\tt vrel}}((x_{15}-x_{14})/{\mbox{\tt tau}})/{\mbox{\tt vup}} - {\mbox{\tt Gleak}}(x_{15}-x_{13})\\
+\frac{dx_{16}}{dt}  \!\!\!\!&=&\!\!\!\!  -(({\mbox{\tt Gna}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt inau1}}/(x_{16}+{\mbox{\tt inau2}})))x_{2}x_{2}x_{2}x_{3}x_{3} + {\mbox{\tt Gnab}}(x_{1}-{\mbox{\tt RTF}}\log({\mbox{\tt nao}}/x_{16})) + {\mbox{\tt naic1}}{\mbox{\tt rate5}}{\mbox{\tt Gnak}}({\mbox{\tt inakc1}})/({\mbox{\tt uni}}+({\mbox{\tt inakc4}}/x_{16})sqrt({\mbox{\tt inakc4}}/x_{16}))/({\mbox{\tt uni}}+{\mbox{\tt inakc2}}\exp(-{\mbox{\tt inakc5}}{\mbox{\tt FRT}}x_{1})+{\mbox{\tt inakc3}}\exp(-{\mbox{\tt FRT}}x_{1})) + {\mbox{\tt naic1}}{\mbox{\tt rate6}}{\mbox{\tt ncxc1}}({\mbox{\tt cao}}x_{16}x_{16}x_{16}\exp({\mbox{\tt ncxrncx}}{\mbox{\tt FRT}}x_{1})-{\mbox{\tt ncxc2}}x_{13}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))/({\mbox{\tt uni}}+{\mbox{\tt ncxksat}}\exp({\mbox{\tt ncxc3}}{\mbox{\tt FRT}}x_{1}))){\mbox{\tt Cm}}/({\mbox{\tt zna}}{\mbox{\tt F}}))/{\mbox{\tt vi}}\\
+\end{eqnarray*}
+\section{Parameters}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+number & variable name & name \\
+\hline
+1 & para(1)  & $\mbox{\tt Cm}$ \\ 
+2 & para(2)  & $\mbox{\tt Eca}$ \\ 
+3 & para(3)  & $\mbox{\tt Ek}$ \\ 
+4 & para(4)  & $\mbox{\tt F}$ \\ 
+5 & para(5)  & $\mbox{\tt FRT}$ \\ 
+6 & para(6)  & $\mbox{\tt Gca}$ \\ 
+7 & para(7)  & $\mbox{\tt Gcab}$ \\ 
+8 & para(8)  & $\mbox{\tt Gk1}$ \\ 
+9 & para(9)  & $\mbox{\tt Gkr}$ \\ 
+10 & para(10)  & $\mbox{\tt Gks}$ \\ 
+11 & para(11)  & $\mbox{\tt Gleak}$ \\ 
+12 & para(12)  & $\mbox{\tt Gna}$ \\ 
+13 & para(13)  & $\mbox{\tt Gnab}$ \\ 
+14 & para(14)  & $\mbox{\tt Gnak}$ \\ 
+15 & para(15)  & $\mbox{\tt Gpca}$ \\ 
+16 & para(16)  & $\mbox{\tt Grel}$ \\ 
+17 & para(17)  & $\mbox{\tt Gto}$ \\ 
+18 & para(18)  & $\mbox{\tt Gup}$ \\ 
+19 & para(19)  & $\mbox{\tt RTF}$ \\ 
+20 & para(20)  & $\mbox{\tt caic1}$ \\ 
+21 & para(21)  & $\mbox{\tt caic2}$ \\ 
+22 & para(22)  & $\mbox{\tt caic3}$ \\ 
+23 & para(23)  & $\mbox{\tt cao}$ \\ 
+24 & para(24)  & $\mbox{\tt concTc}$ \\ 
+25 & para(25)  & $\mbox{\tt conccm}$ \\ 
+26 & para(26)  & $\mbox{\tt conccq}$ \\ 
+27 & para(27)  & $\mbox{\tt dVgq}$ \\ 
+28 & para(28)  & $\mbox{\tt icaldc1}$ \\ 
+29 & para(29)  & $\mbox{\tt icaldc2}$ \\ 
+30 & para(30)  & $\mbox{\tt icaldc3}$ \\ 
+31 & para(31)  & $\mbox{\tt icaldc4}$ \\ 
+32 & para(32)  & $\mbox{\tt icaldc5}$ \\ 
+33 & para(33)  & $\mbox{\tt icaldc6}$ \\ 
+34 & para(34)  & $\mbox{\tt icaldc7}$ \\ 
+35 & para(35)  & $\mbox{\tt icaldc8}$ \\ 
+36 & para(36)  & $\mbox{\tt icaldc9}$ \\ 
+37 & para(37)  & $\mbox{\tt icalkc1}$ \\ 
+38 & para(38)  & $\mbox{\tt icalkc2}$ \\ 
+39 & para(39)  & $\mbox{\tt icalkc3}$ \\ 
+40 & para(40)  & $\mbox{\tt icalkc4}$ \\ 
+41 & para(41)  & $\mbox{\tt icalkc5}$ \\ 
+42 & para(42)  & $\mbox{\tt icalkc6}$ \\ 
+43 & para(43)  & $\mbox{\tt icalkc7}$ \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+number & variable name & name \\
+\hline
+44 & para(44)  & $\mbox{\tt ik1c1}$ \\ 
+45 & para(45)  & $\mbox{\tt ik1c2}$ \\ 
+46 & para(46)  & $\mbox{\tt ik1c3}$ \\ 
+47 & para(47)  & $\mbox{\tt ik1c4}$ \\ 
+48 & para(48)  & $\mbox{\tt ik1c5}$ \\ 
+49 & para(49)  & $\mbox{\tt ik1c6}$ \\ 
+50 & para(50)  & $\mbox{\tt ik1c7}$ \\ 
+51 & para(51)  & $\mbox{\tt ik1c8}$ \\ 
+52 & para(52)  & $\mbox{\tt ikrc1}$ \\ 
+53 & para(53)  & $\mbox{\tt ikrc2}$ \\ 
+54 & para(54)  & $\mbox{\tt ikrc3}$ \\ 
+55 & para(55)  & $\mbox{\tt ikrc4}$ \\ 
+56 & para(56)  & $\mbox{\tt ikrc5}$ \\ 
+57 & para(57)  & $\mbox{\tt ikrc6}$ \\ 
+58 & para(58)  & $\mbox{\tt ikrc7}$ \\ 
+59 & para(59)  & $\mbox{\tt ikrk1}$ \\ 
+60 & para(60)  & $\mbox{\tt ikrk2}$ \\ 
+61 & para(61)  & $\mbox{\tt iksc1}$ \\ 
+62 & para(62)  & $\mbox{\tt iksc2}$ \\ 
+63 & para(63)  & $\mbox{\tt iksc3}$ \\ 
+64 & para(64)  & $\mbox{\tt iksc4}$ \\ 
+65 & para(65)  & $\mbox{\tt iksc5}$ \\ 
+66 & para(66)  & $\mbox{\tt iksc6}$ \\ 
+67 & para(67)  & $\mbox{\tt iksk1}$ \\ 
+68 & para(68)  & $\mbox{\tt inahc1}$ \\ 
+69 & para(69)  & $\mbox{\tt inahc2}$ \\ 
+70 & para(70)  & $\mbox{\tt inahc3}$ \\ 
+71 & para(71)  & $\mbox{\tt inahc4}$ \\ 
+72 & para(72)  & $\mbox{\tt inahc5}$ \\ 
+73 & para(73)  & $\mbox{\tt inahc6}$ \\ 
+74 & para(74)  & $\mbox{\tt inahc7}$ \\ 
+75 & para(75)  & $\mbox{\tt inakc1}$ \\ 
+76 & para(76)  & $\mbox{\tt inakc2}$ \\ 
+77 & para(77)  & $\mbox{\tt inakc3}$ \\ 
+78 & para(78)  & $\mbox{\tt inakc4}$ \\ 
+79 & para(79)  & $\mbox{\tt inakc5}$ \\ 
+80 & para(80)  & $\mbox{\tt inamc1}$ \\ 
+81 & para(81)  & $\mbox{\tt inamc2}$ \\ 
+82 & para(82)  & $\mbox{\tt inamc3}$ \\ 
+83 & para(83)  & $\mbox{\tt inamc4}$ \\ 
+84 & para(84)  & $\mbox{\tt inamc5}$ \\ 
+85 & para(85)  & $\mbox{\tt inau1}$ \\ 
+86 & para(86)  & $\mbox{\tt inau2}$ \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+number & variable name & name \\
+\hline
+87 & para(87)  & $\mbox{\tt itoc1}$ \\ 
+88 & para(88)  & $\mbox{\tt itoc2}$ \\ 
+89 & para(89)  & $\mbox{\tt itoc3}$ \\ 
+90 & para(90)  & $\mbox{\tt itoc4}$ \\ 
+91 & para(91)  & $\mbox{\tt itoc5}$ \\ 
+92 & para(92)  & $\mbox{\tt itoc6}$ \\ 
+93 & para(93)  & $\mbox{\tt itoc7}$ \\ 
+94 & para(94)  & $\mbox{\tt itoc8}$ \\ 
+95 & para(95)  & $\mbox{\tt itoc9}$ \\ 
+96 & para(96)  & $\mbox{\tt itok1}$ \\ 
+97 & para(97)  & $\mbox{\tt itoq1}$ \\ 
+98 & para(98)  & $\mbox{\tt itoq10}$ \\ 
+99 & para(99)  & $\mbox{\tt itoq2}$ \\ 
+100 & para(100)  & $\mbox{\tt itoq3}$ \\ 
+101 & para(101)  & $\mbox{\tt itoq4}$ \\ 
+102 & para(102)  & $\mbox{\tt itoq5}$ \\ 
+103 & para(103)  & $\mbox{\tt itoq6}$ \\ 
+104 & para(104)  & $\mbox{\tt itoq7}$ \\ 
+105 & para(105)  & $\mbox{\tt itoq8}$ \\ 
+106 & para(106)  & $\mbox{\tt itoq9}$ \\ 
+107 & para(107)  & $\mbox{\tt kbtc}$ \\ 
+108 & para(108)  & $\mbox{\tt kdcm}$ \\ 
+109 & para(109)  & $\mbox{\tt kdcq}$ \\ 
+110 & para(110)  & $\mbox{\tt ki}$ \\ 
+111 & para(111)  & $\mbox{\tt kktc}$ \\ 
+112 & para(112)  & $\mbox{\tt kmmca}$ \\ 
+113 & para(113)  & $\mbox{\tt kup}$ \\ 
+114 & para(114)  & $\mbox{\tt naic1}$ \\ 
+115 & para(115)  & $\mbox{\tt nao}$ \\ 
+116 & para(116)  & $\mbox{\tt ncxc1}$ \\ 
+117 & para(117)  & $\mbox{\tt ncxc2}$ \\ 
+118 & para(118)  & $\mbox{\tt ncxc3}$ \\ 
+119 & para(119)  & $\mbox{\tt ncxksat}$ \\ 
+120 & para(120)  & $\mbox{\tt ncxrncx}$ \\ 
+121 & para(121)  & $\mbox{\tt pcakm}$ \\ 
+122 & para(122)  & $\mbox{\tt pnato}$ \\ 
+123 & para(123)  & $\mbox{\tt prnak}$ \\ 
+124 & para(124)  & $\mbox{\tt rate1}$ \\ 
+125 & para(125)  & $\mbox{\tt rate2}$ \\ 
+126 & para(126)  & $\mbox{\tt rate3}$ \\ 
+127 & para(127)  & $\mbox{\tt rate4}$ \\ 
+128 & para(128)  & $\mbox{\tt rate5}$ \\ 
+129 & para(129)  & $\mbox{\tt rate6}$ \\ 
+130 & para(130)  & $\mbox{\tt tau}$ \\ 
+131 & para(131)  & $\mbox{\tt taudf}$ \\ 
+132 & para(132)  & $\mbox{\tt taudr}$ \\ 
+133 & para(133)  & $\mbox{\tt uni}$ \\ 
+134 & para(134)  & $\mbox{\tt vi}$ \\ 
+135 & para(135)  & $\mbox{\tt vrel}$ \\ 
+136 & para(136)  & $\mbox{\tt vup}$ \\ 
+137 & para(137)  & $\mbox{\tt zca}$ \\ 
+138 & para(138)  & $\mbox{\tt zna}$ \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{document}
