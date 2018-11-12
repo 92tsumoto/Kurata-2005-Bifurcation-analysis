@@ -1,0 +1,13 @@
+1//iosave/0/
+g11.01
+1.E+10,100//gmax,emax/1.E+10,100/
+1.E-8,1.E-10//eps,feps/1.E-8,1.E-10/
+1.E-4,1.E-6//RelTol_val,AbsTol_val/1.E-4,1.E-6/
+1//Solver_switch/1:ode45,2:ode23,3:ode113,4:ode23s,5:ode15s,6:myself/
+1,2//ipx,ipy/
+0.001,1E+10//dpara(ipx),enddpara(ipx)/,1.E+8/
+0.001,1E+10//dpara(ipy),enddpara(ipy)/,1.E+8/
+1//bf_type/1:T,2:PD,3:NS,4:arbitary value/
+1,128,16,1.1,10//l,m,iter,auto_sw,nnn/1,128,16,1.1,10/
+1//adaptive step size control./on:1,off:0/
+1//reverse calculation switch./on:1,off:0/
