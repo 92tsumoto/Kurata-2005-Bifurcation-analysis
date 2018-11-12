@@ -1,0 +1,10 @@
+1//iograph/0/
+0//iosave/0/
+1.E+10,100//gmax,emax/1E+10,100/
+1.E-12,1.E-14//eps,feps/1.E-12,1E-14/
+1,2//ipx,ipy/
+0.01,1E+8//dpara(ipx),enddpara(ipx)/,1.E+8/
+0.00,1E+8//dpara(ipy),enddpara(ipy)/,1.E+8/
+1,16,5//l,m,iter,nnn/1,16,5/(period,interval,iteration max,nnn)
+1//istopbf/0:non-stop,1:stop through a bif,2:detaild bif value/
+1.E-3//SeigTol_val/1.E-3/

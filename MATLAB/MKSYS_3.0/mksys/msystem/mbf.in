@@ -1,0 +1,11 @@
+1//iosave/0/
+g11.01
+1.E+10,100//gmax,emax/1.E+10,100/
+1.E-12,1.E-14//eps,feps/1.E-12,1.E-14/
+1,2//ipx,ipy/
+0.001,1E+8//dpara(ipx),enddpara(ipx)/,1.E+8/
+0.001,1E+8//dpara(ipy),enddpara(ipy)/,1.E+8/
+1//bf_type/1:T,2:PD,3:NS,4:arbitary value/
+1,16,1.1,5//l,iter,au,nnn/1,16,1.1,5/
+1//adaptive step size control./on:1,off:0/
+1//reverse calculation switch./on:1,off:0/
