@@ -1,0 +1,67 @@
+/* cell type */
+/* celltype == 0 --> Endo */
+/* celltype == 1 --> Epi */
+/* celltype == 2 --> Mid */
+2
+
+/* Base cycel length */
+//1000
+2000
+//4000
+
+/* ndis */
+//0.001	// 1ms pulse width for BCL1000ms
+0.0005	// 1ms pulse width for BCL2000ms
+
+/* Istim */
+80.0
+
+/* ito_rate */
+//1.0
+1.0
+
+/* number of data */
+1
+
+/* x1, y1 */
+
+-8.526757643522858e+01
+1.478055387843833e-03
+9.932003580674259e-01
+4.630506186660294e-06
+9.587040405638394e-01
+2.679986155357522e-05
+9.995215764281637e-01
+1.049632983243796e-03
+1.827985563192287e-02
+4.630705941097708e-06
+9.998481130573886e-01
+2.772450022589572e-01
+1.917612820906135e-04
+2.825589392456594e+00
+2.812437294152061e+00
+7.931970454084277e+00
+
+/* direction of time */
+1
+
+/* end time. 0.0 = nolimit of integration */ 
+0
+
+1		/* number of period */
+150000    /* strip for integral */
+0		/* for debug flag 0 --- defult /1 --- degug */
+0		/* write file 0 --- not write/1 --- write */
+0		/* write flag 0 --- poincare/1 --- orbit */
+0		/* if 1 then period is PI*/
+
+1.0E-8 /* epsx */
+
+/* reduced rate for Ito */
+-0.001
+
+/* end parameter */
+0.0
+
+/* maximum iteration number */
+16
