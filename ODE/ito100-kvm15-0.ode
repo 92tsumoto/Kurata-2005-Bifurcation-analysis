@@ -1,0 +1,274 @@
+# The Kurata model
+# Human Ventricular Myocyte Model developed by Kurata et al (Biophys J 86: 2865-2887, 2005)
+#
+# Units: mV, pA, nS, pF, fC, aJ, mM(mmol/L), ms
+# General (Physical) Constants
+# focus source eq
+# stable eq
+init V=-8.579331169024694e+01
+init gm=1.353941615041963e-03
+init gh=9.940024868825603e-01
+init gdL=4.260881084908892e-06
+init gfL=9.998592797443657e-01
+init gr=2.573243086191374e-05
+init gq=9.995606942770218e-01
+init gpa=8.926545540792125e-05
+#init gn=-1.000000000000000e-02
+init gdR=4.260881084908739e-06
+init gfR=9.998592797425374e-01
+init ftc=1.008241463982912e-01
+init Cai=5.606475418263842e-05
+init Carel=3.131432550269267e-01
+init Caup=3.131432550232029e-01
+init Nai=6.162591698080388e+00
+par gn=-0.01
+par rateto=1.0
+par zna=1.0,zk=1.0,zca=2.0
+par F=96485000000000000,R=8314400000000000,TT=310.15
+FRT=F/(R*TT)
+RTF=R*TT/F
+par nao=140.0,ko=5.4,cao=2.0,ki=140.0
+#kvm
+#initial conditions
+# Membrane Capacitance (pF)
+par CapHV=153.4
+# Cell Volume (volumes of each compartment) (L)
+Vcell=38.0*0.000000000001
+#(myoplasm volume)
+#par Vi=25.84*0.000000000001
+Vi=0.68*Vcell
+# Vrel=.0048*Vcell (SR release site volume)
+# Vrel=0.182*.000000000001;
+Vrel=0.0048*Vcell
+# Vup=2.098*.000000000001;(SR uptake site volume)
+Vup=0.0552*Vcell
+# Ina
+# Gating Variables (gm/gh)
+par gNamax=7.8
+par PKNa=0.12
+gm_a=0.32*(V+47.13)/(1.0-exp(-(V+47.13)/10.0))
+gm_b=0.08*exp(-V/11.0)
+gminf=gm_a/(gm_a+gm_b)
+ghinf=0.5*(1.0-tanh(7.74+0.12*V))
+gm_tau=1.0/(gm_a+gm_b)
+gh_tau=0.25+2.24*(1.0-tanh(7.74+0.12*V))/(1.0-tanh(0.07*(V+92.4)))
+Emh=RTF*log((nao+PKNa*ko)/(Nai+PKNa*ki))
+iNa=gNamax*(V-Emh)*gm^3*gh^2
+# iCaL
+# Gating Variables (dL/fL --- variables; fCa --- instantaneous)
+gdL_inf=1.0/(1.0+exp(-(V+7.64)/6.32))
+gdL_tau=(1.4/(1.0+exp(-(V+35.0)/13.0))+0.25)*1.4/(1.0+exp((V+5.0)/5.0))+1.0/(1.0+exp(-(V-50.0)/20.0))
+gfL_inf=1.0/(1.0+exp((V+24.6)/6.9))
+gfL_tau=23.9*.75/(0.1389*exp(-(0.0358*(V-10.9))*(0.0358*(V-10.9)))+0.0519)
+par KmfCa=0.00035
+gfCa_inf=KmfCa/(KmfCa+Cai)
+# Epi (Default for Kurata 2005 model)
+# par gCaLmax=.064*3.9;
+# Midcard (based on O'Hara-Rudy 2011 model)
+gCaLmax=0.064*3.9*(2.5/1.2)
+# Endo (based on O'Hara-Rudy 2011 model)
+# par gCaLmax=0.064*3.9*(1.0/1.2)
+par ECaL=52.8
+iCaL=gCaLmax*(V-ECaL)*gdL*gfL*gfCa_inf
+# ito
+# Gating Variables (r/q)
+# Epi (default for Kurata 2005 model)
+# par dVgq=0
+# Mid (from Bernus 2002 model)
+par dVgq=-4.0
+# Endo (from Bernus 2002 model)
+# par dVgq=-12.0
+gr_alp=0.5266*exp(-.0166*(V-42.2912))/(1+exp(-0.0943*(V-42.2912)))
+gr_bet=(0.5149*exp(-0.1344*(V-5.0027))+0.00005186*V)/(1+exp(-0.1348*(V-0.00005186)))
+gr_inf=gr_alp/(gr_alp+gr_bet)
+gr_tau=1.0/(gr_alp+gr_bet)
+gq_alp1=(0.0721*exp(-0.173*(V+34.2531-dVgq))+0.00005612*(V-dVgq))/(1.0+exp(-0.1732*(V+34.2531-dVgq)))
+gq_bet1=(0.0767*exp(-0.00000000166*(V+34.0235-dVgq))+0.0001215*(V-dVgq))/(1.0+exp(-0.1604*(V+34.0235-dVgq)))
+gq_inf=gq_alp1/(gq_alp1+gq_bet1)
+gq_alp2=(0.0721*exp(-0.173*(V+34.2531))+0.00005612*V)/(1.0+exp(-0.1732*(V+34.2531)))
+gq_bet2=(0.0767*exp(-0.00000000166*(V+34.0235))+0.0001215*V)/(1.0+exp(-0.1604*(V+34.0235)))
+gq_tau=1.0/(gq_alp2+gq_bet2)
+# Epi (default for Kurata 2005 model)
+# par gtomax=0.40
+# Mid (from Bernus 2002 model)
+par gtomax=0.35
+# Endo (from Bernus 2002 model)
+# par gtomax=0.13
+par PNato=0.043
+Eto=RTF*log((PNato*nao+ko)/(PNato*Nai+ki))
+ito=rateto*gtomax*(V-Eto)*gr*gq
+# iKr
+# Gating Variables (gpa --- variable; gpi --- instantaneous)
+gpa_inf=1.0/(1.0+exp(-(V+14.0)/7.7))
+gpa_alp=0.0003*(V+14.0)/(1.0-exp(-(V+14.0)/5.0))
+gpa_bet=0.000073898*(V-3.4328)/(exp((V-3.4328)/5.1237)-1.0)
+gpa_tau=1.0/(gpa_alp+gpa_bet)
+gpi_inf=1.0/(1.0+exp((V+15.0)/22.4))
+# Epi (default for Kurata 2005 model)
+# par gKrmax=0.012;
+# Mid (based on O'Hara-Rudy 2011 model)
+gKrmax=0.012*(0.8/1.3)
+# Endo (based on O'Hara-Rudy 2011 model)
+# par gKrmax=0.012*(1/1.3)
+par ratekr=0.13
+EKr=RTF*log(ko/ki)
+iKr=ratekr*gKrmax*(V-EKr)*gpa*gpi_inf
+# iKs
+# Gating Variable (gn)
+gn_inf=1.0/sqrt(1.0+exp(-(V-9.4)/11.8))
+gn_tau=555.0/(1.0+exp(-(V+22.0)/11.3))+129.0
+# Epi (default for Kurata 2005 model)
+# par gKsmax=0.024*1.5
+# Mid (based on O'Hara-Rudy 2011 model)
+gKsmax=0.024*1.5*(1.0/1.4)
+# Endo (based on O'Hara-Rudy 2011 model)
+# par gKsmax=0.024*1.5*(1/1.4)
+par PNaKs=0.01833
+par rateks=1.0
+EKs=RTF*log((PNaKs*nao+ko)/(PNaKs*Nai+ki))
+iKs=rateks*gKsmax*(V-EKs)*gn*gn
+# iK1
+# Epi (default for Kurata 2005 model)
+# par gK1=3.9
+# Mid (based on O'Hara-Rudy 2011 model)
+par k1rate=3.9
+gK1=k1rate*(1.3/1.2)
+# Endo (based on O'Hara-Rudy 2011 model)
+# par gK1=3.9*(1.0/1.2)
+Ek1=RTF*log(ko/ki)
+gk1_alp=0.1/(1.0+exp(0.06*(V-EK1-200.0)))
+gk1_bet=(3.0*exp(0.0002*(V-EK1+100.0))+exp(0.1*(V-EK1-10.0)))/(1.0+exp(-0.5*(V-EK1)))
+gk1_inf=gk1_alp/(gk1_alp+gk1_bet)
+iK1=gK1*(V-EK1)*gk1_inf
+# iNab
+par gNab=0.001
+ENab=RTF*log(nao/Nai)
+iNab=gNab*(V-ENab)
+# iCab
+#par cbrate=0.00085
+#gCab=cbrate*0.6
+gCab=0.00085*0.6
+ECab=(RTF/zca)*log(cao/Cai)
+iCab=gCab*(V-ECab)
+# iNaK
+# Epi (default for Kurata 2005 model)
+# Mid (based on O'Hara-Rudy 2011 model)
+par nakrate=1.3
+iNaKmax=nakrate*0.68
+# Endo (based on O'Hara-Rudy 2011 model)
+# par iNaKmax=1.3*.68*(1/.9)
+par KmNap=10
+par nNa=1.5
+par KmKp=1.5
+RhoNaK=(exp(nao/67.3)-1.0)/7.0
+iNaK=iNaKmax*(ko/(ko+KmKp))/(1+(KmNap/Nai)^nNa)/(1+0.1245*exp(-0.1*FRT*V)+0.0365*RhoNaK*exp(-1.0*FRT*V))
+# iNCX
+# Epi (default for Kurata 2005 model) or Mid
+par kNCX=1000 
+# Endo (based on O'Hara-Rudy 2011 model)
+# par kNCX=1000*(1/1.1);
+par KmNaex=87.5
+par KmCaex=1.38
+par rNCX=0.35
+par ksat=0.1
+iNCX=kNCX/(KmNaex^3+nao^3)/(KmCaex+cao)*(cao*Nai^3*exp(rNCX*FRT*V)-nao^3*Cai*exp((rNCX-1)*FRT*V))/(1+ksat*exp((rNCX-1)*FRT*V))
+# ipCa
+par pcrate=0.275
+ipCamax=pcrate*0.4
+par KmCap=0.0005
+ipCa=ipCamax/(1+(KmCap/Cai))
+# Total Membrane Current (pA/pF)
+itotal=iNa+iCaL+ito+iKr+iKs+iK1+iNab+iCab+iNaK+iNCX+ipCa
+# Net Ion Fluxes (mmol/cell)
+jCanet=(iCaL+iCab-2.0*iNCX+ipCa)*CapHV/(zca*F)
+jNanet=(iNa+iNab+3*iNaK+3*iNCX)*CapHV/(zna*F)
+#jKnet=(ito+iKr+iKs+iK1-2*iNaK)*CapHV/(zk*F)
+# Ca-induced Ca Release via Ryanodine Receptor (mM/ms)
+# Gating Variables (dR/fR; Ca release channel)
+gdR_inf=1.0/(1.0+exp(-(V+7.64)/6.32))
+gfR_inf=1.0/(1.0+exp((V+24.6)/6.9))
+# gdR_tau=rgdRt*4;
+par tgdR=4.0
+# gfR_tau=rgfRt*4;
+par tgfR=16.0
+par nrel=3.0
+# Epi (default for Kurata 2005 model) or Endo
+#Prel=50;
+# Mid (based on O'Hara-Rudy 2011 model)
+par relrate=50.0
+Prel=relrate*1.7
+jrel=Prel/(1.0+exp((iCaL+iCab-2*iNCX+ipCa+5.0)/0.9))*(gdR*gfR)^nrel*(Carel-Cai)
+# Ca Uptake via Ca-pump (SERCA) (mM/ms)
+# Epi (default for Kurata 2005 model)
+# Pup=.000425*5.2; 
+# Mid or Endo (based on O'Hara-Rudy 2011 model)
+par uprate=0.000425
+Pup=uprate*5.2*(1.0/1.3)
+par Kup=0.00025
+jup=Pup*Cai^2/(Cai^2+Kup^2)
+# Ca Transfer/Leak (mM/ms)
+par Pleak=0.00026
+par Ttr=180
+jtr=(Caup-Carel)/Ttr
+jleak=Pleak*(Caup-Cai)
+# Troponin Ca Buffering (in Myoplasm)
+par ConcTC=0.07
+# Rate of Troponin-Ca Interaction (ratio to control)
+par rfTn=10.0
+kfTC=40.0*rfTn
+kbTC=0.02*rfTn
+Dftc=kfTC*Cai*(1.0-ftc)-kbTC*ftc
+# Calmodulin Ca Buffering (in Myoplasm) --- Rapid Buffering Approximation
+# Epi (default for Kurata 2005 model)
+#ConcCM=.05; 
+# Mid or Endo (based on O'Hara-Rudy 2011 model)
+par CCM=0.05
+ConcCM=CCM*(1.0/1.3)
+par KdCM=0.00238
+# Kd for Ca-binding to Calmoduline
+Bcm=1.0/(1.0+ConcCM*KdCM/(KdCM+Cai)^2)
+# Dfcm=kfCM*Cai*(1-fcm)-kbCM*fcm;
+# Calsequestrin Ca Buffering (in SR) --- Rapid Buffering Approximation
+par ConcCQ=10.0
+par KdCQ=0.8
+# Kd for Ca-binding to Calsequestrin
+Bcq=1.0/(1.0+ConcCQ*KdCQ/(KdCQ+Carel)^2)
+# Dfcq=kfCQ*Carel*(1-fcq)-kbCQ*fcq;
+# df(t)/dt (Vector Field: nvar=16) (iext: External Stimulus Current)
+#V'=iext-itotal
+V'=-itotal
+gm'=(gminf-gm)/gm_tau
+gh'=(ghinf-gh)/gh_tau
+gdL'=(gdL_inf-gdL)/gdL_tau
+gfL'=(gfL_inf-gfL)/gfL_tau
+gr'=(gr_inf-gr)/gr_tau
+gq'=(gq_inf-gq)/gq_tau
+gpa'=(gpa_inf-gpa)/gpa_tau
+#gn'=(gn_inf-gn)/gn_tau
+gdR'=(gdR_inf-gdR)/tgdR
+gfR'=(gfR_inf-gfR)/tgfR
+ftc'=kfTC*Cai*(1-ftc)-kbTC*ftc
+Cai'=Bcm*((-jCanet+jrel*Vrel-jup*Vup+jleak*Vup)/Vi-ConcTC*Dftc)
+Carel'=Bcq*(jtr-jrel)
+Caup'=jup-jtr*Vrel/Vup-jleak
+Nai'=-jNanet/Vi
+#Ki'=-jKnet/Vi
+aux lica=iCaL
+aux backica=iCab
+aux ncx=iNCX
+aux pump=ipCa
+aux icatot=jCanet
+aux inatot=jNanet
+#jCanet=(iCaL+iCab-2.0*iNCX+ipCa)*CapHV/(zca*F)
+# some options
+@ colormap=5
+@ TOTAL=1000,DT=0.01,xlo=0,xhi=1000,ylo=-90,yhi=60
+@ xplot=t,yplot=V
+# AUTO options
+@ ntst=15,nmax=3000,npr=1000
+@ ds=0.01,dsmin=1e-3,dsmax=0.1,parmin=-0.03 parmax=1.5
+@ epsl=1e-8,epsu=1e-5,epss=1e-5
+@ autoymax=20,autoymin=-90,autoxmin=-0.5,autoxmax=1.1
+#@ dfgrid=16,ncdraw=1,dfdraw=2
+done
+
